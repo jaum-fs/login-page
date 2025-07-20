@@ -6,6 +6,10 @@
     color: $text-color;
     font-size: 16px;
     text-align: start;
+    
+    .label{
+        margin-bottom: 10px;
+    }
 
     .input-content{
         width: 100%;
@@ -25,7 +29,7 @@
 
         input {
             border: none;
-            border-radius: 8px 0 0 8pxs;
+            border-radius: 8px 0 0 8px;
             background-color: $gray-secondary-bg;
             padding: 12px 0 12px 20px;
             width: 100%;
