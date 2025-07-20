@@ -11,21 +11,21 @@ export class LoginService {
   constructor(private httpClient: HttpClient) { }
 
   login(name: string, password: string) {
-    return this.httpClient.post<LoginResponse>('/login', {name, password}).pipe(
-       tap((value) => {
-          sessionStorage.setItem('auth-token', value.token);
-          sessionStorage.setItem('username', value.name);
-        })
+    return this.httpClient.post<LoginResponse>('/login', { name, password }).pipe(
+      tap((value) => {
+        sessionStorage.setItem('auth-token', value.token);
+        sessionStorage.setItem('username', value.name);
+      })
     );
   }
 
 
   signup(email: string, password: string, name: string) {
-    return this.httpClient.post<LoginResponse>('/login', {name, password}).pipe(
-       tap((value) => {
-          sessionStorage.setItem('auth-token', value.token);
-          sessionStorage.setItem('username', value.name);
-        })
+    return this.httpClient.post<LoginResponse>('/login', { name, password }).pipe(
+      tap((value) => {
+        sessionStorage.setItem('auth-token', value.token);
+        sessionStorage.setItem('username', value.name);
+      })
     );
   }
 
