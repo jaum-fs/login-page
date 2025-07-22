@@ -36,7 +36,7 @@ export class LoginComponent {
   submit(){
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
       next: () => this.toastService.success("Login sucessfull!"),
-      error: () => this.toastService.error("Something is wrong, try again later!")
+      error: () => this.toastService.error("Something is wrong, try again!")
     })
   }
 
