@@ -1,6 +1,6 @@
 # LoginPage
 
-This project was generated with Angular to create a front end to [Backend API with JWT Authentication](https://github.com/jaum-fs/login-page-backend)
+This project was generated with Angular to create a front end for [Backend API with JWT Authentication](https://github.com/jaum-fs/login-page-backend)
 
 ## Development server
 
