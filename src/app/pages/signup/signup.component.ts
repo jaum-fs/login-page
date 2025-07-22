@@ -9,7 +9,8 @@ import { ToastrService } from 'ngx-toastr';
 interface SignupForm{
   name: FormControl,
   email: FormControl,
-  password: FormControl
+  password: FormControl,
+  confirmPassword: FormControl
 }
 
 @Component({
@@ -27,23 +28,25 @@ export class SignupComponent {
     private router: Router,
     private loginService: LoginService,
     private toastService: ToastrService
-  ){
+
+  ) {
     this.signupForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validatorsmin])
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)])
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
   }
 
-  submit(){
-    this.loginService.signup(this.loginForm.name, this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success("Login feito com sucesso!"),
-      error: () => this.toastService.error("Erro inesperado!")
+  submit() {
+    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
+      next: () => this.toastService.success("Your account is sucessfull created!"),
+      error: () => this.toastService.error("Something is wrong, try again later!")
     })
   }
 
-  navigate(){
-    this.router.navigate(["signup"]);
+  navigate() {
+    this.router.navigate(["login"]);
   }
 
 }
